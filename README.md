@@ -1,2 +1,2 @@
-# pomodoro
-Simple Pomodoro app in Vue.js
+# Pomodoro
+Simple [Pomodoro](https://en.wikipedia.org/wiki/Pomodoro_Technique) app in Vue.js
