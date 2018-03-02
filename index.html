@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./font/css/open-iconic-bootstrap.css">
+    <link rel="stylesheet" href="./pomodoro.css">
 </head>
 <body>
     <div id="app" class="container">
         <h2>Pomodoro</h2>
-        <button @click="start()" class="btn btn-light btn-lg">
-            <i class="oi oi-media-play"></i>
-        </button>
-        <div class="well">
-            <div class="pomodoro-timer">
-                {{minute}}:{{second}}
+        <h3>{{title}}</h3>
+        <div class="btn-group">
+            <button :disabled="state === 'started'" @click="start()" class="btn btn-light btn-lg">
+                <i class="oi oi-media-play"></i>
+            </button>
+            <button :disabled="state !== 'started'" @click="pause()" class="btn btn-light btn-lg">
+                <i class="oi oi-media-pause"></i>
+            </button>
+            <button :disabled="state !== 'started' && state !== 'paused'" @click="stop()" class="btn btn-light btn-lg">
+                <i class="oi oi-media-stop"></i>
+            </button>
+        </div>
+        <div class="card pomodoro-timer">
+            <div class="card-body">
+                {{min}}:{{sec}}
             </div>
         </div>
     </div>
