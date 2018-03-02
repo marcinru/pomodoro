@@ -7,8 +7,8 @@ const STATES = {
     STOPPED: 'stopped',
     PAUSED: 'paused'
 };
-const WORKING_TIME_LENGTH_IN_MINUTES = 1;
-const RESTING_TIME_LENGTH_IN_MINUTES = 1;
+const WORKING_TIME_LENGTH_IN_MINUTES = 25;
+const RESTING_TIME_LENGTH_IN_MINUTES = 5;
 
 new Vue({
     el: '#app',
