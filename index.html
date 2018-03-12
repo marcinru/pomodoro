@@ -30,6 +30,7 @@
                 {{min}}:{{sec}}
             </div>
         </div>
+        <img v-if="pomodoroState === 'rest'" src="http://thecatapi.com/api/images/get" alt="Random cat picture">
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="pomodoro.js"></script>
