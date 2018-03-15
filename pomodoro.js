@@ -10,14 +10,14 @@ const STATES = {
 const WORKING_TIME_LENGTH_IN_MINUTES = 25;
 const RESTING_TIME_LENGTH_IN_MINUTES = 5;
 
-new Vue({
+const app = new Vue({
     el: '#app',
     data: {
         state: STATES.STOPPED,
         minute: WORKING_TIME_LENGTH_IN_MINUTES,
         second: 0,
         pomodoroState: POMODORO_STATES.WORK,
-        timeStamp: 0
+        timestamp: 0
     },
     computed: {
         title: function() {
@@ -54,6 +54,9 @@ new Vue({
             this.second = 0;
         },
         _thick: function() {
+            if (this.second % 10 === 0) {
+                this.timestamp = new Date().getTime();
+            }
             if (this.second !== 0) {
                 this.second--;
                 return;

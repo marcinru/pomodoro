@@ -1,3 +1,7 @@
+.hidden {
+    display: none;
+}
+
 .pomodoro-timer {
     margin: .5rem 0;
 }
